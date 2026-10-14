@@ -17,11 +17,14 @@ DB_CONNECT();
 
 // SERVER RESPONSE
 app.get('/', (req, res) => {
-  res.send('Hey! Buddy, This Product CRUD SERVER.')
+  res.json({
+    author: "Eftajul Islam Shadi",
+    message: "Hey! Buddy, Welcome To Mr.BOOMBASTIC'S CRUD SERVER."
+  })
 })
 
 // ROUTES
-app.use('/', router)
+app.use('/api/v1', router)
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
